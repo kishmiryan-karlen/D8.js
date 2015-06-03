@@ -2,7 +2,7 @@
 (function(global) {
     'use strict';
 
-    var supportedParts = 'dDjlNSWFmMntLoYyaABgGhHisueIOPTZcrU'.split('');
+    var supportedFlags = 'dDjlNSWFmMntLoYyaABgGhHisueIOPTZcrU'.split('');
 
     var months = [
         'January',
@@ -188,7 +188,7 @@
                         continue;
                     }
 
-                    if (supportedParts.indexOf(formatArr[i]) > -1) {
+                    if (supportedFlags.indexOf(formatArr[i]) > -1) {
                         formatted.push(getPartValue(formatArr[i]));
                     } else {
                         formatted.push(formatArr[i]);
