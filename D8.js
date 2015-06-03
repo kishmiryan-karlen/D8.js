@@ -60,10 +60,6 @@
     global.D8 = function D8() {
         var currentDate = new Date();
 
-        if (typeof arguments[0] === 'string') {
-            var parts = arguments[0].split(':');
-        }
-
         function getDayOfYear() {
             var start = new Date(currentDate.getFullYear(), 0, 0),
                 diff = currentDate - start,
@@ -94,8 +90,8 @@
             return currentDate.getHours() > 12 ? 'pm' : 'am';
         }
  
-        function getPartValue(part) {
-            switch (part) {
+        function getFlagValue(flag) {
+            switch (flag) {
                 case 'd':
                     var day = currentDate.getDay();
                     return day < 10 ? '0' + day : day;
@@ -189,7 +185,7 @@
                     }
 
                     if (supportedFlags.indexOf(formatArr[i]) > -1) {
-                        formatted.push(getPartValue(formatArr[i]));
+                        formatted.push(getFlagValue(formatArr[i]));
                     } else {
                         formatted.push(formatArr[i]);
                     }
